@@ -24,4 +24,8 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+    <bean id="addressDao" class="net.therap.dao.AddressDao" >
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
 </beans>

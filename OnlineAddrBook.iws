@@ -16,25 +16,33 @@
   <component name="ChangeListManager">
     <list default="true" id="93722e19-6164-44f1-bdc3-3bb4b62bf562" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/therap/command/LoginCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/therap/command/UserCommand.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/therap/dao/AddressDao.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/therap/dao/UserDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/therap/service/AddressManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/therap/service/AddressManagerImpl.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/therap/service/UserManager.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/therap/service/UserManagerImpl.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/therap/validator/LoginValidator.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/therap/validator/SignUpValidator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/therap/web/SignUpController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/therap/web/AddContactController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/therap/web/ContactsController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/therap/web/ProfileController.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sign-up.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/add-contact.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contacts.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/profile.jsp" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/projectFilesBackup/OnlineAddrBook.iml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/projectFilesBackup/OnlineAddrBook.ipr" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnlineAddrBook.ipr" afterPath="$PROJECT_DIR$/OnlineAddrBook.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnlineAddrBook.iws" afterPath="$PROJECT_DIR$/OnlineAddrBook.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/therap/command/UserCommand.java" afterPath="$PROJECT_DIR$/src/main/java/net/therap/command/UserCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/therap/domain/Address.java" afterPath="$PROJECT_DIR$/src/main/java/net/therap/domain/Address.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/therap/domain/User.java" afterPath="$PROJECT_DIR$/src/main/java/net/therap/domain/User.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/therap/web/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/net/therap/web/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators/main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators/main.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/onlineAddrBook-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/onlineAddrBook-servlet.xml" />
     </list>
     <ignored path="OnlineAddrBook.iws" />
@@ -233,10 +241,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HomeController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/web/HomeController.java">
+      <file leaf-file-name="ProfileController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/web/ProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="31" selection-start="2312" selection-end="2312" vertical-scroll-proportion="-24.32">
+            <state line="28" column="56" selection-start="1036" selection-end="1036" vertical-scroll-proportion="-16.8">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -244,30 +252,72 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.jsp" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators/main.jsp">
+      <file leaf-file-name="AddContactController.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/web/AddContactController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="109" selection-start="2332" selection-end="2332" vertical-scroll-proportion="0.5095109">
+            <state line="43" column="56" selection-start="1649" selection-end="1649" vertical-scroll-proportion="0.3117409">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/profile.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="49" selection-start="381" selection-end="381" vertical-scroll-proportion="-6.428571">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginValidator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/validator/LoginValidator.java">
+      <file leaf-file-name="contacts.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contacts.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="52" selection-start="1483" selection-end="1483" vertical-scroll-proportion="-25.2">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="12" column="31" selection-start="226" selection-end="226" vertical-scroll-proportion="-3.6734693">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messages.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/messages.properties">
+      <file leaf-file-name="add-contact.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/add-contact.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="12" selection-start="39" selection-end="39" vertical-scroll-proportion="-0.6">
+            <state line="59" column="21" selection-start="1926" selection-end="1926" vertical-scroll-proportion="-11.22449">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="applicationContext.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="57" selection-start="1660" selection-end="1660" vertical-scroll-proportion="-10.434783">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="onlineAddrBook-servlet.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/onlineAddrBook-servlet.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log4j.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -292,22 +342,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/css/style.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/net/therap/command/UserCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sign-up.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/onlineAddrBook-servlet.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/net/therap/domain/User.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/net/therap/validator/SignUpValidator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/therap/web/SignUpController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/messages.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/net/therap/service/UserManagerImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/therap/service/UserManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/therap/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/therap/validator/LoginValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/therap/web/HomeController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/profile.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/onlineAddrBook-servlet.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators/main.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/net/therap/web/ProfileController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/therap/command/UserCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/therap/dao/AddressDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/therap/service/AddressManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/therap/service/AddressManagerImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/therap/domain/Address.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/therap/web/ContactsController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contacts.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/net/therap/command/AddressCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/add-contact.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/net/therap/web/AddContactController.java" />
       </list>
     </option>
   </component>
@@ -985,6 +1035,20 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+      <deployment />
+      <server-settings>
+        <option name="DEPLOY_TOMCAT_APPS" value="false" />
+        <option name="BASE_DIRECTORY_NAME" value="" />
+      </server-settings>
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -1139,115 +1203,36 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="83" selection-start="687" selection-end="687" vertical-scroll-proportion="0.59681696">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sign-up.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="17" selection-start="1433" selection-end="1433" vertical-scroll-proportion="-20.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="47" selection-end="76" vertical-scroll-proportion="0.0198939">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="354" selection-end="354" vertical-scroll-proportion="0.15523933">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/web/SignUpController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="5" selection-start="2034" selection-end="2034" vertical-scroll-proportion="0.84210527">
+        <state line="57" column="6" selection-start="1420" selection-end="2034" vertical-scroll-proportion="0.84210527">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/service/AddressManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="39" selection-start="1228" selection-end="1228" vertical-scroll-proportion="-11.938775">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/validator/SignUpValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="612" selection-end="641" vertical-scroll-proportion="-0.18976545">
+        <state line="16" column="47" selection-start="398" selection-end="398" vertical-scroll-proportion="0.3183024">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/command/LoginCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/dao/AddressDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="28" selection-start="229" selection-end="238" vertical-scroll-proportion="-3.68">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/service/UserManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="47" selection-start="378" selection-end="378" vertical-scroll-proportion="-9.0">
+        <state line="28" column="44" selection-start="824" selection-end="864" vertical-scroll-proportion="0.54333764">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/dao/UserDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/service/AddressManagerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="101" selection-start="924" selection-end="924" vertical-scroll-proportion="0.59681696">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/service/UserManagerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="47" selection-start="850" selection-end="850" vertical-scroll-proportion="0.58704454">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="24" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.43882978">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/messages.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="12" selection-start="39" selection-end="39" vertical-scroll-proportion="-0.6">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/validator/LoginValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="52" selection-start="1483" selection-end="1483" vertical-scroll-proportion="-25.2">
+        <state line="29" column="5" selection-start="747" selection-end="747" vertical-scroll-proportion="-17.4">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1256,17 +1241,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/web/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="31" selection-start="2312" selection-end="2312" vertical-scroll-proportion="-24.32">
+        <state line="63" column="40" selection-start="2373" selection-end="2373" vertical-scroll-proportion="-26.76">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators/main.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/web/ContactsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="109" selection-start="2332" selection-end="2332" vertical-scroll-proportion="0.5095109">
+        <state line="39" column="58" selection-start="1502" selection-end="1502" vertical-scroll-proportion="-23.4">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/domain/Address.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="32" selection-start="406" selection-end="406" vertical-scroll-proportion="0.19736843">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/profile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="49" selection-start="381" selection-end="381" vertical-scroll-proportion="-6.428571">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/add-contact.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="21" selection-start="1926" selection-end="1926" vertical-scroll-proportion="-11.22449">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="57" selection-start="1660" selection-end="1660" vertical-scroll-proportion="-10.434783">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/onlineAddrBook-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contacts.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="31" selection-start="226" selection-end="226" vertical-scroll-proportion="-3.6734693">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/web/ProfileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="56" selection-start="1036" selection-end="1036" vertical-scroll-proportion="-16.8">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/therap/web/AddContactController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="56" selection-start="1649" selection-end="1649" vertical-scroll-proportion="0.3117409">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

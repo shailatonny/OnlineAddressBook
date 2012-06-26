@@ -28,9 +28,10 @@
         <td height="36" colspan="3" id="navigation" class="navText">
             <a href="javascript:;">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="javascript:;">ABOUT US</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="javascript:;">SIGN UP</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="javascript:;">THINGS TO DO</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="javascript:;">CONTACT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="contacts.html">CONTACTS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="add-contact.html">ADD CONTACT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="sign-up.html">SIGN UP</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:;">LOG OUT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </td>
         <td width="40">&nbsp;</td>
         <td width="100%">&nbsp;</td>

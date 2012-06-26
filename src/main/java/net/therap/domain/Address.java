@@ -27,6 +27,17 @@ public class Address {
     public Address() {
     }
 
+    public Address(String name, String formattedName, String organization, String title, String photo, String phone, String address, String revision) {
+        this.name = name;
+        this.formattedName = formattedName;
+        this.organization = organization;
+        this.title = title;
+        this.photo = photo;
+        this.phone = phone;
+        this.address = address;
+        this.revision = revision;
+    }
+
     @Id
     @SequenceGenerator(name = "Z_ADDRESS_SEQ", sequenceName = "Z_ADDRESS_SEQ")
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "Z_ADDRESS_SEQ")
@@ -58,7 +69,7 @@ public class Address {
         this.name = name;
     }
 
-    @Column(name = "FORMATTED_NAME", nullable = false)
+    @Column(name = "FORMATTED_NAME")
     public String getFormattedName() {
         return formattedName;
     }
