@@ -20,4 +20,8 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <bean id="userDao" class="net.therap.dao.UserDao" >
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
 </beans>

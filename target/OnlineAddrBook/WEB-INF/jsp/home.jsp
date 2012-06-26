@@ -7,9 +7,37 @@
 
 <body>
 <table>
+    <%--<tr>
+        <td class="msgText">
+            ${msg}
+        </td>
+    </tr>--%>
     <tr>
         <td>
-            <b><big>HELLO!</big></b>
+            <form:form method="POST" commandName="loginForm">
+                <fieldset>
+                    <legend>LogIn</legend>
+                    <table width="100%" align="right">
+                        <tr>
+                            <td>Login Name:</td>
+                            <td><form:input path="loginName"/></td>
+                            <td><form:errors path="loginName" cssClass="error"/></td>
+                        </tr>
+                        <tr>
+                            <td>Password:</td>
+                            <td><form:password path="password"/></td>
+                            <td><form:errors path="password" cssClass="error"/></td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <br>
+                <input type="submit" align="right" value="Submit">
+            </form:form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="sign-up.html">Sign Up</a>
         </td>
     </tr>
 </table>

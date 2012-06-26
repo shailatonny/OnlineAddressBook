@@ -28,6 +28,13 @@ public class User {
     public User() {
     }
 
+    public User(String loginName, String password, String fullName, String email) {
+        this.loginName = loginName;
+        this.password = password;
+        this.fullName = fullName;
+        this.email = email;
+    }
+
     @Id
     @SequenceGenerator(name = "Z_USER_SEQ", sequenceName = "Z_USER_SEQ")
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "Z_USER_SEQ")
