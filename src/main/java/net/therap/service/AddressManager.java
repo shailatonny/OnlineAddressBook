@@ -15,4 +15,6 @@ import java.util.List;
 public interface AddressManager {
     public void saveAddress(Address address);
     public List<Address> getAddress(User user);
+    public Address getAddress(long adrId);
+    public void updateAddress(Address address);
 }

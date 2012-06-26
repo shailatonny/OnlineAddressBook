@@ -23,6 +23,7 @@ public class UserDao extends HibernateDaoSupport {
         Session session = getSession();
         session.save(user);
         session.flush();
+        //throw new RuntimeException();
     }
 
     public User getUserByLoginName(String loginName) {

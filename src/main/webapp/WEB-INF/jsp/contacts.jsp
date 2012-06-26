@@ -24,7 +24,7 @@
         <c:forEach var="entry" items="${addressList}">
             <tr>
                 <td>
-                    <a href="contact-details.html?adrId=${entry.adrId}">${entry.name}</a>
+                    <a href="contact-details.html?addressId=${entry.adrId}">${entry.name}</a>
                 </td>
                 <td>
                         ${entry.address}

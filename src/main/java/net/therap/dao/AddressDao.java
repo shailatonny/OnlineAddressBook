@@ -19,6 +19,12 @@ import java.util.List;
 public class AddressDao extends HibernateDaoSupport {
     public static final Logger log = LoggerFactory.getLogger(AddressDao.class);
 
+    public void saveAddress(Address address) {
+        Session session = getSession();
+        session.save(address);
+        session.flush();
+    }
+
     public List<Address> getAddress(User user) {
         String query = "FROM Address adr WHERE adr.user = :userObj";
 
@@ -26,9 +32,13 @@ public class AddressDao extends HibernateDaoSupport {
         return addressList;
     }
 
-    public void saveAddress(Address address) {
+    public Address getAddress(long adrId) {
+         return (Address) this.getHibernateTemplate().load(Address.class, adrId);
+    }
+
+    public void updateAddress(Address address) {
         Session session = getSession();
-        session.save(address);
+        session.update(address);
         session.flush();
     }
 }

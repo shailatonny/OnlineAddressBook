@@ -31,7 +31,7 @@
             <a href="contacts.html">CONTACTS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="add-contact.html">ADD CONTACT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="sign-up.html">SIGN UP</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="javascript:;">LOG OUT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="logout.html">LOG OUT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </td>
         <td width="40">&nbsp;</td>
         <td width="100%">&nbsp;</td>
