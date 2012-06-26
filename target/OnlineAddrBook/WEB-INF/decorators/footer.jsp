@@ -3,6 +3,7 @@
 
 <br>
 <br>
+
 <div class="foot" align="center">
-        <%--&copy; Copyright 2012 Shaila and Saima--%>
+    <%--&copy; Copyright 2012 Shaila and Saima--%>
 </div>

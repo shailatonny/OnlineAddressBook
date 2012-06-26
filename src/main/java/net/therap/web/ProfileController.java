@@ -21,10 +21,10 @@ import javax.servlet.http.HttpSession;
  */
 @Controller
 public class ProfileController {
-   public static final Logger log = LoggerFactory.getLogger(ProfileController.class);
+    public static final Logger log = LoggerFactory.getLogger(ProfileController.class);
 
     @RequestMapping(value = "profile.html", method = RequestMethod.GET)
-    public String showPhotos(ModelMap model, HttpServletRequest request, HttpServletResponse response) {
+    public String showProfile(ModelMap model, HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession(false);
         User user = (User) session.getAttribute("User");
         model.addAttribute("loginName", user.getLoginName());

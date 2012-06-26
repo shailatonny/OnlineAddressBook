@@ -35,12 +35,11 @@ public class LoginValidator implements Validator {
 
         LoginCommand loginCmd = (LoginCommand) obj;
 
-        User user2 =  userManager.getUserByLoginName(loginCmd.getLoginName());
+        User user2 = userManager.getUserByLoginName(loginCmd.getLoginName());
 
-        if(user2 == null) {
+        if (user2 == null) {
             errors.rejectValue("loginName", "incorrect.login.name");
-        }
-        else if(!loginCmd.getPassword().equals(user2.getPassword())) {
+        } else if (!loginCmd.getPassword().equals(user2.getPassword())) {
             errors.rejectValue("password", "incorrect.password");
         }
     }

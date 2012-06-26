@@ -16,7 +16,7 @@ import java.io.IOException;
  * Time: 5:44 PM
  * To change this template use File | Settings | File Templates.
  */
-public class LoginFilter implements Filter{
+public class LoginFilter implements Filter {
     private static final org.slf4j.Logger log = LoggerFactory.getLogger(LoginFilter.class);
 
     public void init(FilterConfig filterConfig) throws ServletException {

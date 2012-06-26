@@ -13,11 +13,15 @@
             <b><big>Hi! ${loginName} </big></b>
         </td>
     </tr>
+    <tr>
+        <td>
+            <a href="delete.html?addressId=${address.adrId}">delete this contact</a>
+        </td>
+    </tr>
 </table>
 <fieldset>
-    <legend>Add Contact</legend>
+    <legend>Contact Details:</legend>
     <table bottom:100 right:10>
-
         <table width="100%" align="right">
             <form:form method="POST" commandName="address">
                 <tr>

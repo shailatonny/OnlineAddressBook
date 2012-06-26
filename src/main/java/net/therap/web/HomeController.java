@@ -50,16 +50,14 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String processLoginForm(@ModelAttribute("loginForm") LoginCommand loginCmd, BindingResult result,
-                              ModelMap model, HttpServletRequest request, HttpServletResponse response) {
+                                   ModelMap model, HttpServletRequest request, HttpServletResponse response) {
         loginValidator.validate(loginCmd, result);
-
         if (result.hasErrors()) {
             model.addAttribute("loginForm", loginCmd);
             return "home";
         }
 
         User user = userManager.getUserByLoginName(loginCmd.getLoginName());
-
         HttpSession session = request.getSession();
         session.setAttribute("User", user);
 

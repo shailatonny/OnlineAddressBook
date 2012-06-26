@@ -38,7 +38,7 @@ public class User {
     @Id
     @SequenceGenerator(name = "Z_USER_SEQ", sequenceName = "Z_USER_SEQ")
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "Z_USER_SEQ")
-	@Column(name = "USER_ID")
+    @Column(name = "USER_ID")
     public long getUserId() {
         return userId;
     }

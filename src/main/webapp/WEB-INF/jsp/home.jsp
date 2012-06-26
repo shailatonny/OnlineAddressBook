@@ -7,11 +7,11 @@
 
 <body>
 <table>
-    <%--<tr>
+    <tr>
         <td class="msgText">
             ${msg}
         </td>
-    </tr>--%>
+    </tr>
     <tr>
         <td>
             <form:form method="POST" commandName="loginForm">
@@ -35,11 +35,11 @@
             </form:form>
         </td>
     </tr>
-    <tr>
+    <%--<tr>
         <td>
             <a href="sign-up.html">Sign Up</a>
         </td>
-    </tr>
+    </tr>--%>
 </table>
 </body>
 

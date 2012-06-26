@@ -49,7 +49,8 @@
             <table border="0" cellspacing="0" cellpadding="0" width="230">
                 <tr>
                     <td width="15">&nbsp;</td>
-                    <td width="200" class="sidebarText" id="padding">This is a online site to keep safe your contacts<br/>
+                    <td width="200" class="sidebarText" id="padding">This is a online site to keep safe your
+                        contacts<br/>
                         &nbsp;<br/>
                     </td>
                     <td width="15">&nbsp;</td>

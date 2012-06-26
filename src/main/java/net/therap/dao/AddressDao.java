@@ -25,20 +25,26 @@ public class AddressDao extends HibernateDaoSupport {
         session.flush();
     }
 
+    public void updateAddress(Address address) {
+        Session session = getSession();
+        session.update(address);
+        session.flush();
+    }
+
     public List<Address> getAddress(User user) {
         String query = "FROM Address adr WHERE adr.user = :userObj";
-
         List<Address> addressList = this.getHibernateTemplate().findByNamedParam(query, "userObj", user);
         return addressList;
     }
 
     public Address getAddress(long adrId) {
-         return (Address) this.getHibernateTemplate().load(Address.class, adrId);
+        return (Address) this.getHibernateTemplate().load(Address.class, adrId);
     }
 
-    public void updateAddress(Address address) {
+    public void deleteAddress(long adrId) {
         Session session = getSession();
-        session.update(address);
+        Address address = getAddress(adrId);
+        session.delete(address);
         session.flush();
     }
 }

@@ -41,4 +41,8 @@ public class AddressManagerImpl implements AddressManager {
     public Address getAddress(long adrId) {
         return addressDao.getAddress(adrId);
     }
+
+    public void deleteAddress(long adrId) {
+        addressDao.deleteAddress(adrId);
+    }
 }

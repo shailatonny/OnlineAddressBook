@@ -28,8 +28,7 @@ public class UserDao extends HibernateDaoSupport {
 
     public User getUserByLoginName(String loginName) {
         String query = "FROM User user WHERE user.loginName = :login_name";
-
         List<User> userList = this.getHibernateTemplate().findByNamedParam(query, "login_name", loginName);
-        return (userList.size() == 0) ? null:userList.get(0);
+        return (userList.size() == 0) ? null : userList.get(0);
     }
 }
