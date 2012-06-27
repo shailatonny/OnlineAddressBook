@@ -38,6 +38,11 @@
     <input type="submit" align="center" value="Save">
 </form:form>
 
+<table>
+    <tr height="100px">
+        <td>&nbsp</td>
+    </tr>
+</table>
 </body>
 
 </html>

@@ -8,15 +8,16 @@
 
 <body>
 <table bottom:100 right:10>
-    <%--<tr>
-        <td>
-            <a href="add-contact.html">add contact</a>
-        </td>
-    </tr>--%>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
     <tr>
         <td>
-            <b><big>${loginName}, Your Contact List: </big></b>
+            <b><big>Your Contact List: </big></b>
         </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
     </tr>
 </table>
 <table bottom:100 right:10 border="1" class="contact">
@@ -54,6 +55,17 @@
     </c:forEach>
     <%--</c:if>--%>
 </table>
+
+
+<table bottom:100 right:10>
+    <tr>
+        <td height="200px">
+            &nbsp;
+        </td>
+    </tr>
+</table>
+
+
 </body>
 
 </html>

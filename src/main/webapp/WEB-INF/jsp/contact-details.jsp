@@ -22,11 +22,7 @@
     <tr>
         <td>&nbsp;</td>
     </tr>
-    <tr>
-        <td>
-            <a href="delete.html?addressId=${address.adrId}">delete this contact</a>
-        </td>
-    </tr>
+
 
 </table>
 
@@ -97,7 +93,9 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
+                    <td>
+                        <big><a href="delete.html?addressId=${address.adrId}">Delete</a></big>
+                    </td>
                     <td>&nbsp;</td>
                     <td><input type="submit" align="right" value="Save"></td>
                     <td><input type="button" align="right" value="Export" onClick="exportContact()"></td>

@@ -25,6 +25,7 @@
 
     <tr bgcolor="#a4c2c2">
         <td width="15" nowrap="nowrap">&nbsp;</td>
+
         <td height="36" colspan="3" id="navigation" class="navText">
             <a href="home.html">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="profile.html">PROFILE</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -60,7 +61,7 @@
         <td width="50" valign="top"><img src='<c:url value="/images/mm_spacer.gif"/>' alt="" width="50" height="1"
                                          border="0"/>
         </td>
-        <td width="100%" valign="top"><br/>    <%--width="440"--%>
+        <td width="100%" valign="top"><br/> <%--width="440"--%>
             <br/>
             <table border="0" cellspacing="0" cellpadding="0" width="440">
                 <tr>

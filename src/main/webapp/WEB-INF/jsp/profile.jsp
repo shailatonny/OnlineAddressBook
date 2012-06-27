@@ -14,9 +14,7 @@
         </td>
     </tr>
     <tr>
-        <td>
-            <a href="contacts.html">my contacts</a>
-        </td>
+        <td>&nbsp;</td>
     </tr>
     <tr>
         <td>
@@ -31,12 +29,17 @@
                     </tr>
                     <tr>
                         <td width="550px" class="error">
-                            ${emptyStr}
+                                ${emptyStr}
+                        </td>
+                    </tr>
+                    <tr>
+                        <%--<td>&nbsp;</td>
+                        <td>&nbsp;</td>--%>
+                        <td>
+                            <input type="submit" align="right" value="Search">
                         </td>
                     </tr>
                 </table>
-                <br>
-                <input type="submit" align="right" value="Search">
             </form:form>
         </td>
     </tr>
@@ -47,6 +50,12 @@
             </td>
         </tr>
     </c:forEach>
+</table>
+
+<table>
+    <tr height="100px">
+        <td>&nbsp</td>
+    </tr>
 </table>
 </body>
 
