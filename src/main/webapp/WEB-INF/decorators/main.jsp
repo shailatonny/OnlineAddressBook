@@ -60,7 +60,7 @@
         <td width="50" valign="top"><img src='<c:url value="/images/mm_spacer.gif"/>' alt="" width="50" height="1"
                                          border="0"/>
         </td>
-        <td width="440" valign="top"><br/>
+        <td width="100%" valign="top"><br/>    <%--width="440"--%>
             <br/>
             <table border="0" cellspacing="0" cellpadding="0" width="440">
                 <tr>

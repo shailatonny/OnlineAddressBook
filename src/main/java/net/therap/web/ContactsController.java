@@ -21,7 +21,10 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.io.FileOutputStream;
 
 /**
  * Created by IntelliJ IDEA.
@@ -93,7 +96,7 @@ public class ContactsController {
 
     @RequestMapping(value = "contact-details.html", method = RequestMethod.POST)
     public String editContact(@ModelAttribute("address") Address editedAddress, BindingResult result,
-                              ModelMap model, HttpServletRequest request, HttpServletResponse response) {
+                              ModelMap model, HttpServletRequest request) {
 
         HttpSession session = request.getSession(false);
         User user = (User) session.getAttribute("User");
@@ -113,7 +116,7 @@ public class ContactsController {
     }
 
     @RequestMapping(value = "delete.html", method = RequestMethod.GET)
-    public String deleteContact(ModelMap model, HttpServletRequest request, HttpServletResponse response) {
+    public String deleteContact(ModelMap model, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         User user = (User) session.getAttribute("User");
         model.addAttribute("loginName", user.getLoginName());
@@ -121,6 +124,37 @@ public class ContactsController {
         long adrId = ServletRequestUtils.getLongParameter(request, "addressId", -1);
         addressManager.deleteAddress(adrId);
 
+        return "contacts";
+    }
+
+
+    @RequestMapping(value = "export-contact.html", method = RequestMethod.GET)
+    public String extractContact(HttpServletRequest request, HttpServletResponse response) {
+
+        long adrId = ServletRequestUtils.getLongParameter(request, "addressId", -1);
+        Address address = addressManager.getAddress(adrId);
+
+        String contactDetails = "BEGIN:VCARD\n" +
+                "VERSION: 4.0\n" +
+                "N: " + address.getName() + "\n" +
+                "FN: " + address.getFormattedName() + "\n" +
+                "ORG: " + address.getOrganization() + "\n" +
+                "TITLE: " + address.getTitle() + "\n" +
+                "PHOTO: " + address.getPhoto() + "\n" +
+                "TEL: " + address.getPhone() + "\n" +
+                "ADR: " + address.getAddress() + "\n" +
+                "EMAIL: " + address.getEmail() + "\n" +
+                "REV: " + address.getRevision() + "\n" +
+                "END: VCARD";
+
+        try {
+            response.setHeader("Content-Disposition", "attachment; filename=" + address.getName() + ".vcf");
+            response.setContentType("text/text");
+            response.getOutputStream().write(contactDetails.getBytes());
+            response.flushBuffer();
+        } catch (Exception e) {
+            log.info("xxx");
+        }
         return "contacts";
     }
 }

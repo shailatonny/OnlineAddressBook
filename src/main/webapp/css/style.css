@@ -15,6 +15,12 @@ td.contact {
     color: #333333;
 }
 
+tr.contact {
+    padding: 15px;
+    font: 16px Monospace;
+    color: #333333;
+}
+
 table.contact {
     padding: 15px;
     font: 11px arial;

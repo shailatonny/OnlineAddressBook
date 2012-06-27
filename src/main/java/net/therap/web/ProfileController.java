@@ -49,12 +49,14 @@ public class ProfileController {
     public String searchContact(@ModelAttribute("searchCmd") SearchCommand searchCmd, ModelMap model, HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession(false);
         User user = (User) session.getAttribute("User");
+        if (!searchCmd.getFindName().isEmpty()) {
+            List<Address> addressList = addressManager.findAddress(searchCmd.getFindName(), user);
 
-        List<Address> addressList = addressManager.findAddress(searchCmd.getFindName(), user);
+            if (addressList.size() == 0) {
+                model.addAttribute("noMatch", "Sorry no such contact in your list");
+            } else model.addAttribute("addressList", addressList);
+        } else model.addAttribute("emptyStr", "Please give a name to search!");
 
-        if (addressList.size() == 0) {
-            model.addAttribute("noMatch", "Sorry no such contact in your list");
-        } else model.addAttribute("addressList", addressList);
 
         model.addAttribute("loginName", user.getLoginName());
         model.addAttribute("userId", user.getUserId());

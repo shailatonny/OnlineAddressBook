@@ -29,7 +29,7 @@
             </tr>
             <tr>
                 <td><label class="required"> * </label>E-mail:</td>
-                <td><form:input path="email"/></td>
+                <td><form:input path="email" maxlength="255"/></td>
                 <td><form:errors path="email" cssClass="error"/></td>
             </tr>
         </table>

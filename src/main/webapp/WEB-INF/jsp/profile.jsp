@@ -29,6 +29,11 @@
                                 ${noMatch}
                         </td>
                     </tr>
+                    <tr>
+                        <td width="550px" class="error">
+                            ${emptyStr}
+                        </td>
+                    </tr>
                 </table>
                 <br>
                 <input type="submit" align="right" value="Search">

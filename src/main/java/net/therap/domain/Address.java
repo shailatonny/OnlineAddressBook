@@ -21,6 +21,7 @@ public class Address {
     private String photo;
     private String phone;
     private String address;
+    private String email;
     private String revision;
     private long version;
 
@@ -36,6 +37,18 @@ public class Address {
         this.phone = phone;
         this.address = address;
         this.revision = revision;
+    }
+
+    public Address(String name, String formattedName, String organization, String title, String photo, String phone, String address, String revision, String email) {
+        this.name = name;
+        this.formattedName = formattedName;
+        this.organization = organization;
+        this.title = title;
+        this.photo = photo;
+        this.phone = phone;
+        this.address = address;
+        this.revision = revision;
+        this.email = email;
     }
 
     @Id
@@ -121,6 +134,15 @@ public class Address {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Column(name = "EMAIL")
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Column(name = "REVISION")
