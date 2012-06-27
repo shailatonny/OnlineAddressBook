@@ -191,9 +191,27 @@ public class ContactsController {
                     } else if (line.startsWith("FN:")) {
                         vcardStr = line.substring(3);
                         newAddress.setFormattedName(vcardStr);
+                    } else if (line.startsWith("ORG:")) {
+                        vcardStr = line.substring(4);
+                        newAddress.setOrganization(vcardStr);
+                    } else if (line.startsWith("TITLE:")) {
+                        vcardStr = line.substring(6);
+                        newAddress.setTitle(vcardStr);
+                    } else if (line.startsWith("PHOTO:")) {
+                        vcardStr = line.substring(6);
+                        newAddress.setPhoto(vcardStr);
+                    } else if (line.startsWith("TEL:")) {
+                        vcardStr = line.substring(4);
+                        newAddress.setPhone(vcardStr);
                     } else if (line.startsWith("ADR:")) {
                         vcardStr = line.substring(4);
                         newAddress.setAddress(vcardStr);
+                    } else if (line.startsWith("EMAIL:")) {
+                        vcardStr = line.substring(6);
+                        newAddress.setEmail(vcardStr);
+                    } else if (line.startsWith("REV:")) {
+                        vcardStr = line.substring(4);
+                        newAddress.setRevision(vcardStr);
                     }
                 }
             } catch (IOException e) {
