@@ -11,17 +11,25 @@
     <tr>
         <td>&nbsp;</td>
     </tr>
-    <tr>
-        <td>
-            <b><big>Your Contact List: </big></b>
-        </td>
-    </tr>
+    <c:if test="${not empty addressList}">
+        <tr>
+            <td>
+                <b><big>Your Contact List: </big></b>
+            </td>
+        </tr>
+    </c:if>
+    <c:if test="${empty addressList}">
+        <tr>
+            <td>
+                <b><big>No One in your Contact List!</big></b>
+            </td>
+        </tr>
+    </c:if>
     <tr>
         <td>&nbsp;</td>
     </tr>
 </table>
 <table bottom:100 right:10 border="1" class="contact">
-    <%--<c:if test="${not empty addressList}">--%>
     <c:forEach var="entry" items="${addressList}">
         <tr>
             <td class="contact">
@@ -53,7 +61,6 @@
             </td>
         </tr>
     </c:forEach>
-    <%--</c:if>--%>
 </table>
 
 

@@ -1,7 +1,6 @@
 package net.therap.web;
 
 import net.therap.command.SearchCommand;
-import net.therap.command.UserCommand;
 import net.therap.domain.Address;
 import net.therap.domain.User;
 import net.therap.service.AddressManager;
@@ -27,14 +26,14 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 @Controller
-public class ProfileController {
-    public static final Logger log = LoggerFactory.getLogger(ProfileController.class);
+public class SearchController {
+    public static final Logger log = LoggerFactory.getLogger(SearchController.class);
 
     @Autowired
     private AddressManager addressManager;
 
-    @RequestMapping(value = "profile.html", method = RequestMethod.GET)
-    public String showProfile(ModelMap model, HttpServletRequest request, HttpServletResponse response) {
+    @RequestMapping(value = "search.html", method = RequestMethod.GET)
+    public String showSearchForm(ModelMap model, HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession(false);
         User user = (User) session.getAttribute("User");
 
@@ -42,10 +41,10 @@ public class ProfileController {
         model.addAttribute("searchCmd", searchCmd);
         model.addAttribute("loginName", user.getLoginName());
         model.addAttribute("userId", user.getUserId());
-        return "profile";
+        return "search";
     }
 
-    @RequestMapping(value = "profile.html", method = RequestMethod.POST)
+    @RequestMapping(value = "search.html", method = RequestMethod.POST)
     public String searchContact(@ModelAttribute("searchCmd") SearchCommand searchCmd, ModelMap model, HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession(false);
         User user = (User) session.getAttribute("User");
@@ -60,6 +59,6 @@ public class ProfileController {
 
         model.addAttribute("loginName", user.getLoginName());
         model.addAttribute("userId", user.getUserId());
-        return "profile";
+        return "search";
     }
 }

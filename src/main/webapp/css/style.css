@@ -5,7 +5,7 @@ body {
 }
 
 td {
-    font: 11px arial;
+    font: 14px arial;
     color: #333333;
 }
 
@@ -27,10 +27,6 @@ table.contact {
     color: #333333;
 }
 
-/*table, td, th {
-    border: 1px solid green;
-}*/
-
 a {
     color: #cc0000;
     text-decoration: underline;
@@ -43,7 +39,6 @@ a:hover {
 }
 
 /* ID Styles */
-
 #navigation a {
     font: 10px arial;
     color: #336666;
@@ -131,4 +126,11 @@ a:hover {
 .msgText {
     color: #006600;
     font-style: italic;
+}
+
+.big {
+    font: 18px times new roman;
+    color: #333300;
+    letter-spacing: .4em;
+    font-weight: bold;
 }

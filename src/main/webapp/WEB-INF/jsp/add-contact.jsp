@@ -93,8 +93,13 @@
     </table>
 </fieldset>
 
-
 <table>
+    <tr height="50px">
+        <td>&nbsp</td>
+    </tr>
+    <tr>
+        <td><big>Or you can <a href="import-contact.html">Import Contact</a></big></td>
+    </tr>
     <tr height="100px">
         <td>&nbsp</td>
     </tr>

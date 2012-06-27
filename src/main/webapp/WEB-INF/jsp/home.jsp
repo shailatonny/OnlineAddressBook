@@ -8,6 +8,9 @@
 <body>
 <table>
     <tr>
+        <td height="50px">&nbsp;</td>
+    </tr>
+    <tr>
         <td class="msgText">
             ${msg}
         </td>
@@ -35,11 +38,9 @@
             </form:form>
         </td>
     </tr>
-    <%--<tr>
-        <td>
-            <a href="sign-up.html">Sign Up</a>
-        </td>
-    </tr>--%>
+    <tr>
+        <td height="110px">&nbsp;</td>
+    </tr>
 </table>
 </body>
 

@@ -28,11 +28,15 @@
 
         <td height="36" colspan="3" id="navigation" class="navText">
             <a href="home.html">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="profile.html">PROFILE</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="contacts.html">CONTACTS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="add-contact.html">ADD CONTACT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="sign-up.html">SIGN UP</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="logout.html">LOG OUT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <c:if test="${empty User}">
+                <a href="sign-up.html">SIGN UP</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </c:if>
+            <c:if test="${not empty User}">
+                <a href="search.html">SEARCH</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="contacts.html">CONTACTS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="add-contact.html">ADD CONTACT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="logout.html">LOG OUT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </c:if>
         </td>
         <td width="40">&nbsp;</td>
         <td width="100%">&nbsp;</td>
@@ -65,7 +69,9 @@
             <br/>
             <table border="0" cellspacing="0" cellpadding="0" width="440">
                 <tr>
-                    <td class="pageName"><p>Welcome</p></td>
+                    <c:if test="${empty User}">
+                    <td class="pageName"><p>Welcome!</p></td>
+                    </c:if>
                 </tr>
                 <%--<tr>
                     <td class="bodyText">

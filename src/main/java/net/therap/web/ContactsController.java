@@ -1,10 +1,12 @@
 package net.therap.web;
 
+import net.therap.command.ImportCommand;
 import net.therap.domain.Address;
 import net.therap.domain.User;
 import net.therap.service.AddressManager;
 import net.therap.validator.LoginValidator;
 import net.therap.validator.SignUpValidator;
+import org.hibernate.Hibernate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +23,10 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.nio.Buffer;
 import java.util.List;
-import java.io.FileOutputStream;
+import java.util.StringTokenizer;
 
 /**
  * Created by IntelliJ IDEA.
@@ -148,7 +150,7 @@ public class ContactsController {
                 "END: VCARD";
 
         try {
-            response.setHeader("Content-Disposition", "attachment; filename=" + address.getName() + ".vcf");
+            response.setHeader("Content-Disposition", "attachment; filename=" + address.getName() + "_" + address.getUser().getLoginName() + ".vcf");
             response.setContentType("text/text");
             response.getOutputStream().write(contactDetails.getBytes());
             response.flushBuffer();
@@ -156,5 +158,49 @@ public class ContactsController {
             log.info("xxx");
         }
         return "contacts";
+    }
+
+    @RequestMapping(value = "import-contact.html", method = RequestMethod.GET)
+    public String importContact(ModelMap model, HttpServletRequest request, HttpServletResponse response) {
+        HttpSession session = request.getSession(false);
+        User user = (User) session.getAttribute("User");
+
+        ImportCommand importCommand = new ImportCommand();
+        model.addAttribute("importCommand", importCommand);
+        model.addAttribute("loginName", user.getLoginName());
+        return "import-contact";
+    }
+
+    @RequestMapping(value = "import-contact.html", method = RequestMethod.POST)
+    public String processImportContact(@ModelAttribute("importCommand") ImportCommand importCommand,
+                                       ModelMap model, HttpServletRequest request, HttpServletResponse response,
+                                       @RequestParam("file") MultipartFile file) {
+        importCommand.setVcard(file);
+        MultipartFile multipartFile = importCommand.getVcard();
+
+        if (!multipartFile.isEmpty()) {
+            try {
+                InputStream inputStream = multipartFile.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    String vcardStr = null;
+                    StringTokenizer st = new StringTokenizer(line);
+                    while (st.hasMoreTokens()) {
+                        String str = st.nextToken();
+                        if (str.startsWith("BEGIN:VCARD")) {
+                        } else if (str.startsWith("VERSION:")) {
+                        } else if (str.startsWith("N:")) {
+                            vcardStr = str.substring(2);
+                            log.info("qqqqq", vcardStr);
+                        }
+                    }
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return "import-contact";
     }
 }

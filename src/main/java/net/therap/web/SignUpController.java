@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  * Created by IntelliJ IDEA.
  * User: shaila
@@ -57,3 +60,4 @@ public class SignUpController {
         return new ModelAndView("redirect:home.html", model);
     }
 }
+

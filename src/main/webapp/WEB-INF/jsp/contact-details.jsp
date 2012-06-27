@@ -15,6 +15,9 @@
 <%--<table>--%>
 <table width="100%" bottom:100 right:10>
     <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
         <td>
             <b><big>Hi! ${loginName} </big></b>
         </td>
@@ -28,7 +31,7 @@
 
 
 <fieldset>
-    <legend>Contact Details:</legend>
+    <legend>Contact Details of ${address.name}:</legend>
     <br>
     <table width="100%" bottom:100 right:10>
         <table width="100%" align="right">

@@ -61,6 +61,6 @@ public class HomeController {
         HttpSession session = request.getSession();
         session.setAttribute("User", user);
 
-        return "redirect:profile.html";
+        return "redirect:search.html";
     }
 }
