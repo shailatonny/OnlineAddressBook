@@ -167,6 +167,7 @@ public class ContactsController {
     public String processImportContact(@ModelAttribute("importCommand") ImportCommand importCommand,
                                        ModelMap model, HttpServletRequest request, HttpServletResponse response,
                                        @RequestParam("file") MultipartFile file) {
+        log.info("processImportContact");
         HttpSession session = request.getSession(false);
         User user = (User) session.getAttribute("User");
 
@@ -181,27 +182,22 @@ public class ContactsController {
                 InputStream inputStream = multipartFile.getInputStream();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
-
                 String line;
                 while ((line = bufferedReader.readLine()) != null) {
                     String vcardStr = null;
-                    StringTokenizer st = new StringTokenizer(line);
-                    while (st.hasMoreTokens()) {
-                        String str = st.nextToken();
-                        if (str.startsWith("N:")) {
-                            vcardStr = str.substring(2);
-                            newAddress.setName(vcardStr);
-
-                        } else if (str.startsWith("FN:")) {
-                            vcardStr = str.substring(3);
-                            newAddress.setFormattedName(vcardStr);
-                        } else if (str.startsWith("ADR:")) {
-                            vcardStr = str.substring(4);
-                            newAddress.setAddress(vcardStr);
-                        }
+                    if (line.startsWith("N:")) {
+                        vcardStr = line.substring(2);
+                        newAddress.setName(vcardStr);
+                    } else if (line.startsWith("FN:")) {
+                        vcardStr = line.substring(3);
+                        newAddress.setFormattedName(vcardStr);
+                    } else if (line.startsWith("ADR:")) {
+                        vcardStr = line.substring(4);
+                        newAddress.setAddress(vcardStr);
                     }
                 }
             } catch (IOException e) {
+                log.info(":(");
                 throw new RuntimeException(e);
             }
         }

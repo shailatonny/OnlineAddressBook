@@ -43,7 +43,6 @@
                 <table width="100%" align="right">
                     <tr>
                         <td width="250px"><input path="vcard" type="file" name="file" id="vcard"/></td>
-
                     </tr>
                     <tr>
                         <td width="250px"></td>
