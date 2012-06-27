@@ -19,35 +19,35 @@
         </td>
     </tr>
 </table>
-<table bottom:100 right:10 border="1">
+<table bottom:100 right:10 border="1" class="contact">
     <%--<c:if test="${not empty addressList}">--%>
     <c:forEach var="entry" items="${addressList}">
         <tr>
-            <td>
+            <td class="contact">
                 <a href="contact-details.html?addressId=${entry.adrId}">${entry.name}</a>
             </td>
-            <td>
+            <td class="contact">
                     ${entry.name}
             </td>
-            <td>
+            <td class="contact">
                     ${entry.formattedName}
             </td>
-            <td>
+            <td class="contact">
                     ${entry.organization}
             </td>
-            <td>
+            <td class="contact">
                     ${entry.title}
             </td>
-            <td>
+            <td class="contact">
                     ${entry.photo}
             </td>
-            <td>
+            <td class="contact">
                     ${entry.phone}
             </td>
-            <td>
+            <td class="contact">
                     ${entry.address}
             </td>
-            <td>
+            <td class="contact">
                     ${entry.revision}
             </td>
         </tr>

@@ -26,8 +26,8 @@
     <tr bgcolor="#a4c2c2">
         <td width="15" nowrap="nowrap">&nbsp;</td>
         <td height="36" colspan="3" id="navigation" class="navText">
-            <a href="javascript:;">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="javascript:;">ABOUT US</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="home.html">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="profile.html">PROFILE</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="contacts.html">CONTACTS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="add-contact.html">ADD CONTACT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="sign-up.html">SIGN UP</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -18,4 +18,5 @@ public interface AddressManager {
     public List<Address> getAddress(User user);
     public Address getAddress(long adrId);
     public void deleteAddress(long adrId);
+    public List<Address> findAddress(String findName, User user);
 }
