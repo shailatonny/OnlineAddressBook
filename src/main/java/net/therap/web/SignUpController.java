@@ -46,7 +46,6 @@ public class SignUpController {
     @RequestMapping(value = "sign-up.html", method = RequestMethod.POST)
     public ModelAndView processForm(@ModelAttribute("newUser") UserCommand userCmd, BindingResult result, ModelMap model) {
 
-        log.info("in post");
         signUpValidator.validate(userCmd, result);
 
         if (result.hasErrors()) {
@@ -55,7 +54,6 @@ public class SignUpController {
         }
 
         userManager.saveUser(userCmd);
-        log.info("after save");
         model.addAttribute("successMsg", "successful");
         return new ModelAndView("redirect:home.html", model);
     }

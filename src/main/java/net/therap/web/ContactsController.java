@@ -66,16 +66,9 @@ public class ContactsController {
     @RequestMapping(value = "add-contact.html", method = RequestMethod.POST)
     public String processAddContactForm(@ModelAttribute("address") Address address,
                                         HttpServletRequest request, HttpServletResponse response) {
-
-        /*signUpValidator.validate(userCmd, result);
-        if (result.hasErrors()) {
-            model.addAttribute("newUser", userCmd);
-            return new ModelAndView("sign-up");
-        }*/
         HttpSession session = request.getSession(false);
         User user = (User) session.getAttribute("User");
 
-        log.info("in processAddContactForm", address.getName());
         Address newAddress = new Address(address.getName(), address.getFormattedName(), address.getOrganization(),
                 address.getTitle(), address.getPhoto(), address.getPhone(), address.getAddress(), address.getRevision());
         newAddress.setUser(user);
@@ -155,7 +148,6 @@ public class ContactsController {
             response.getOutputStream().write(contactDetails.getBytes());
             response.flushBuffer();
         } catch (Exception e) {
-            log.info("xxx");
         }
         return "contacts";
     }
@@ -175,6 +167,12 @@ public class ContactsController {
     public String processImportContact(@ModelAttribute("importCommand") ImportCommand importCommand,
                                        ModelMap model, HttpServletRequest request, HttpServletResponse response,
                                        @RequestParam("file") MultipartFile file) {
+        HttpSession session = request.getSession(false);
+        User user = (User) session.getAttribute("User");
+
+        Address newAddress = new Address();
+        newAddress.setUser(user);
+
         importCommand.setVcard(file);
         MultipartFile multipartFile = importCommand.getVcard();
 
@@ -183,17 +181,23 @@ public class ContactsController {
                 InputStream inputStream = multipartFile.getInputStream();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
+
                 String line;
                 while ((line = bufferedReader.readLine()) != null) {
                     String vcardStr = null;
                     StringTokenizer st = new StringTokenizer(line);
                     while (st.hasMoreTokens()) {
                         String str = st.nextToken();
-                        if (str.startsWith("BEGIN:VCARD")) {
-                        } else if (str.startsWith("VERSION:")) {
-                        } else if (str.startsWith("N:")) {
+                        if (str.startsWith("N:")) {
                             vcardStr = str.substring(2);
-                            log.info("qqqqq", vcardStr);
+                            newAddress.setName(vcardStr);
+
+                        } else if (str.startsWith("FN:")) {
+                            vcardStr = str.substring(3);
+                            newAddress.setFormattedName(vcardStr);
+                        } else if (str.startsWith("ADR:")) {
+                            vcardStr = str.substring(4);
+                            newAddress.setAddress(vcardStr);
                         }
                     }
                 }
@@ -201,6 +205,8 @@ public class ContactsController {
                 throw new RuntimeException(e);
             }
         }
+
+        addressManager.saveAddress(newAddress);
         return "import-contact";
     }
 }

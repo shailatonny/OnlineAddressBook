@@ -19,7 +19,6 @@ public class UserDao extends HibernateDaoSupport {
     public static final Logger log = LoggerFactory.getLogger(UserDao.class);
 
     public void saveUser(User user) {
-        log.info("in saveUser");
         Session session = getSession();
         session.save(user);
         session.flush();
