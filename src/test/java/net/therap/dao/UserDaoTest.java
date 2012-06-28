@@ -17,7 +17,7 @@ import org.unitils.spring.annotation.SpringBean;
  */
 @DataSet
 @SpringApplicationContext(value = {"classpath:applicationContext-test.xml"})
-public class UserDaoTest  extends UnitilsTestNG {
+public class UserDaoTest extends UnitilsTestNG {
     @SpringBean("userDao")
     UserDao userDao;
 

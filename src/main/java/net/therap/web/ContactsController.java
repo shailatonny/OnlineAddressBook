@@ -68,11 +68,8 @@ public class ContactsController {
                                         HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession(false);
         User user = (User) session.getAttribute("User");
-
-        Address newAddress = new Address(address.getName(), address.getFormattedName(), address.getOrganization(),
-                address.getTitle(), address.getPhoto(), address.getPhone(), address.getAddress(), address.getRevision());
-        newAddress.setUser(user);
-        addressManager.saveAddress(newAddress);
+        address.setUser(user);
+        addressManager.saveAddress(address);
         return "redirect:contacts.html";
     }
 
@@ -119,6 +116,8 @@ public class ContactsController {
         long adrId = ServletRequestUtils.getLongParameter(request, "addressId", -1);
         addressManager.deleteAddress(adrId);
 
+        List<Address> addressList = addressManager.getAddress(user);
+        model.addAttribute("addressList", addressList);
         return "contacts";
     }
 
@@ -221,6 +220,10 @@ public class ContactsController {
         }
 
         addressManager.saveAddress(newAddress);
-        return "import-contact";
+        List<Address> addressList = addressManager.getAddress(user);
+        model.addAttribute("addressList", addressList);
+        model.addAttribute("loginName", user.getLoginName());
+        model.addAttribute("userId", user.getUserId());
+        return "contacts";
     }
 }

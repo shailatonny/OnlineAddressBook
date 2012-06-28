@@ -50,7 +50,7 @@ public class AddressDao extends HibernateDaoSupport {
 
     public List<Address> findAddress(String findName, User user) {
         String query = "FROM Address adr WHERE adr.name like ? AND adr.user = ?";
-        List<Address> addressList = this.getHibernateTemplate().find(query, '%'+findName+'%' , user);
+        List<Address> addressList = this.getHibernateTemplate().find(query, '%' + findName + '%', user);
         return addressList;
     }
 }

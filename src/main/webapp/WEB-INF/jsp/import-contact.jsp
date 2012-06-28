@@ -47,7 +47,7 @@
                     <tr>
                         <td width="250px"></td>
                         <td>
-                            <input type="submit" align="right" value="Save">
+                            <input type="submit" align="right" value="Import">
                         </td>
                     </tr>
                 </table>

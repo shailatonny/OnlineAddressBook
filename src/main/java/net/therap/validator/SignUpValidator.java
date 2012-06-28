@@ -38,7 +38,7 @@ public class SignUpValidator implements Validator {
         UserCommand userCmd = (UserCommand) obj;
         User user = userManager.getUserByLoginName(userCmd.getLoginName());
 
-        if(user != null) {
+        if (user != null) {
             errors.rejectValue("loginName", "already.exists.login.name");
         }
 

@@ -70,7 +70,7 @@
             <table border="0" cellspacing="0" cellpadding="0" width="440">
                 <tr>
                     <c:if test="${empty User}">
-                    <td class="pageName"><p>Welcome!</p></td>
+                        <td class="pageName"><p>Welcome!</p></td>
                     </c:if>
                 </tr>
                 <%--<tr>

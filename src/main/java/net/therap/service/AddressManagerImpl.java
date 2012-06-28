@@ -47,6 +47,6 @@ public class AddressManagerImpl implements AddressManager {
     }
 
     public List<Address> findAddress(String findName, User user) {
-           return addressDao.findAddress(findName, user);
+        return addressDao.findAddress(findName, user);
     }
 }
